@@ -14,6 +14,7 @@ import { useT } from '@gitroom/react/translation/get.transation.service.client';
 import { Select } from '@gitroom/react/form/select';
 import { YoutubePreview } from '@gitroom/frontend/components/new-launch/providers/youtube/youtube.preview';
 import { useIntegration } from '@gitroom/frontend/components/launches/helpers/use.integration';
+import { YoutubePlaylist } from '@gitroom/frontend/components/new-launch/providers/youtube/youtube.playlist';
 import { stripHtmlValidation } from '@gitroom/helpers/utils/strip.html.validation';
 const type = [
   {
@@ -106,6 +107,7 @@ const YoutubeSettings: FC = () => {
         ))}
       </Select>
       <MediumTags label="Tags" {...register('tags')} />
+      <YoutubePlaylist {...register('playlistId')} />
       {!!thumbnail?.path && (
         <div className="mt-[20px] flex items-center gap-[10px] text-[12px]">
           <div className="flex-1">
